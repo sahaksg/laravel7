@@ -7,6 +7,7 @@
             <div class="card">
                 <div class="card-header">Dashboard</div>
 
+                
                 <div class="card-body">
                     @if (session('status'))
                         <div class="alert alert-success" role="alert">
@@ -15,6 +16,17 @@
                     @endif
 
                     You are logged in!
+                </div>
+                <div class="card-footer">
+                   <form action="/upload" method="post" enctype="multipart/form-data">
+                     @csrf
+                       <input type="file" name="image" />
+                       <button type="submit">Upload</button>
+                       {{-- <input type="submit" value="Upload" /> --}}
+
+                   </form>
+
+                    
                 </div>
             </div>
         </div>

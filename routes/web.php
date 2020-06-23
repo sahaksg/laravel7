@@ -1,6 +1,9 @@
 <?php
 
+use Illuminate\Http\Client\Request;
+use Illuminate\Http\Request as HttpRequest;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\View;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,12 +17,23 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    // return env('APP_NAME');
+    // return \Config::get('database.connections.mysql.password');
+    // dd (\Config::get('database.connections.mysql.password'));
+    // dd (\Config::get('app.name'));
+    // dd (env('APP_NAME'));
+    // return env('database.connections.mysql.password');
+    // return \Config::get('app.name');
     return view('welcome');
+    // return View::make('welcome');
     // return "123";
 });
 
 Route::get('/test', 'UserController@index');
+Route::post('/upload', function(HttpRequest $request){
+    // dd($request->all());
+    $request->image->store('images', 'public');
+    return "File is uploaded!";
+});
 
 Auth::routes();
 

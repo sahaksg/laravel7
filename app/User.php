@@ -38,11 +38,15 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+    // public function getAuthPassword()
+    // {
+    // return $this->user_password;
+    // }
 
-    public function setPasswordAttribute($password)
-    {
-        $this->attributes['password'] = bcrypt($password);
-    }
+    // public function setPasswordAttribute($password)
+    // {
+    //     $this->attributes['password'] = bcrypt($password);
+    // }
     //  public function setNameAttribute($name)
     // {
     //     $this->attributes['name'] = "Soghomonyan".$name;

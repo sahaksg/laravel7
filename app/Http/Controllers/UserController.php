@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\User;
+use Illuminate\Http\Client\Request as ClientRequest;
 use Illuminate\Support\Facades\DB;
 
 use Illuminate\Http\Request;
@@ -38,4 +39,18 @@ class UserController extends Controller
     
     return  $user;
    }
+
+   public function uploadAvatar (Request $request)
+   {
+       if($request->hasFile('image')){
+       $filename=$request->image->getClientOriginalName();
+       $request->image->storeAs('image', $filename, 'public');
+       User::find(1)->update(['avatar'=> $filename]) ;
+       }
+    
+    // dd($request->all());
+    // $request->image->store('images', 'public');
+    return redirect()->back();
+    }
 }
+

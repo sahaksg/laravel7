@@ -4,6 +4,7 @@ use Illuminate\Http\Client\Request;
 use Illuminate\Http\Request as HttpRequest;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\View;
+use Illuminate\Support\Facades\Session;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,12 +30,22 @@ Route::get('/', function () {
 });
 
 Route::get('/test', 'UserController@index');
-Route::post('/upload', function(HttpRequest $request){
-    // dd($request->all());
-    $request->image->store('images', 'public');
-    return "File is uploaded!";
-});
+Route::post('/upload', 'UserController@uploadAvatar');
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/locate', function () {
+    return view("language");
+});
+// Route::get('/locate', array (
+//     'Middleware'=>'LanguageSwitcher',
+//     'uses'=>'LanguageController@index'
+// )) ;
+
+Route::get('locale/{locale}', function ($locale){
+    // dd($locale);
+    Session::put('locale', $locale);
+    return redirect()->back();
+});

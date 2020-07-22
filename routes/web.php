@@ -34,7 +34,9 @@ Route::post('/upload', 'UserController@uploadAvatar');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+// Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/admin', 'HomeController@index')->name('home');
+Route::get('/testhome', 'HomeController@test')->name('testhome');
 
 Route::get('/locate', function () {
     return view("language");
@@ -49,3 +51,8 @@ Route::get('locale/{locale}', function ($locale){
     Session::put('locale', $locale);
     return redirect()->back();
 });
+
+// Route::get('/admin', function(){
+//     return view('layouts.admin');
+//     return "Admin Panel here";
+// });

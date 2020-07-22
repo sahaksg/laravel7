@@ -36,6 +36,7 @@ Auth::routes();
 
 // Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/admin', 'HomeController@index')->name('home');
+Route::get('/admin/category', 'CategoriesController@index');
 Route::get('/testhome', 'HomeController@test')->name('testhome');
 
 Route::get('/locate', function () {

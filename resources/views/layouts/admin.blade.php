@@ -191,11 +191,11 @@
             
           </li>
           <li class="nav-item">
-            <a href="pages/widgets.html" class="nav-link">
+            <a href='{{route("categories.index")}}' class="nav-link">
               <i class="nav-icon fas fa-th"></i>
-              <p>
-                Category                
-              </p>
+              
+              <p>Category</p>
+                
             </a>
           </li>
           <li class="nav-item">

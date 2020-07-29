@@ -113,7 +113,8 @@
                   <!-- Morris chart - Sales -->
                   <div class="chart tab-pane active" id="revenue-chart"
                        style="position: relative; height: 300px;">
-                      <canvas id="revenue-chart-canvas" height="300" style="height: 300px;"></canvas>                         
+                       <iframe class="airtable-embed" src="https://airtable.com/embed/shrp2WUYiHgwOA5Qx?backgroundColor=pink&layout=card&viewControls=on" frameborder="0" onmousewheel="" width="100%" height="533" style="background: transparent; border: 1px solid #ccc;"></iframe>
+                      <!-- <canvas id="revenue-chart-canvas" height="300" style="height: 300px;"></canvas>                          -->
                    </div>
                   <div class="chart tab-pane" id="sales-chart" style="position: relative; height: 300px;">
                     <canvas id="sales-chart-canvas" height="300" style="height: 300px;"></canvas>                         

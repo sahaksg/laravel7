@@ -36,7 +36,9 @@ Auth::routes();
 
 // Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/admin', 'HomeController@index')->name('home');
-Route::get('/admin/category', 'CategoriesController@index');
+// Route::get('/admin/category', 'CategoriesController@index')->name('category_list');
+// Route::get('/admin/category/detail/{id}', 'CategoriesController@detail')->name('category_detail');
+Route::resource('categories', 'CategoriesController');
 Route::get('/testhome', 'HomeController@test')->name('testhome');
 
 Route::get('/locate', function () {
